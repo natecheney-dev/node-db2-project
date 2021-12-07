@@ -1,4 +1,3 @@
-const { get } = require('superagent');
 const db = require('../../data/db-config')
 
 
@@ -17,8 +16,10 @@ const getById = (id) => {
 const create = (car) => {
   return db('cars')
     .insert(car)
-    .then(([id]) => getAll(id));
+    .then(([id]) => getById(id));
 }
+
+
 
 
 module.exports = {
